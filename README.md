@@ -9,7 +9,9 @@ The [tutorial](https://github.com/Tingliangstu/Phonon-Vibration-Viewer/blob/main
 
 Example:
 
-<div align=center><img src=https://github.com/Tingliangstu/Phonon-Vibration-Viewer/blob/main/figure/fig3.bmp>
+<div align=left><img src=https://github.com/Tingliangstu/Phonon-Vibration-Viewer/blob/main/figure/fig3.bmp>
+
+
 
 
 
