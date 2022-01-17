@@ -63,19 +63,19 @@ def plot_dispersion_gpumd(linear_path, sym_points):
 
     figure(figsize=(8, 10))
     set_fig_properties([gca()])
-    #vlines(sym_points, ymin=-0.2, ymax=60, linestyle="--", colors="pink")
-    print(nu[0, 4])
+    # vlines(sym_points, ymin=-0.2, ymax=60, linestyle="--", colors="pink")
+    # print(nu[0, 4])
     plot(linear_path, nu[:, 0], color='C0', lw=2, label="Tersoff-1989")
     plot(linear_path, nu[:, 1:], color='C0', lw=2)
     xlim([0, max(linear_path)])
     gca().set_xticks(sym_points)
     gca().set_xticklabels([r'$\Gamma$', 'Y', 'S', 'X', r'$\Gamma$'])
-    ylim([0, 20])
+    ylim([0, 20])    # or [0, 55] THz
     gca().set_yticks(linspace(0, 20, 5))
     ylabel(r'$\nu$ (THz)')
     legend(frameon=True, loc="best")
     title("Fivefold3-DNWs")
-    #savefig("VP_PhononBand.pdf", bbox_inches='tight')
+    #savefig("Fivefold3-DNWs.pdf", bbox_inches='tight')
     show()
 
 if __name__ == "__main__":

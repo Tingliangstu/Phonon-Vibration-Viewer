@@ -117,7 +117,7 @@ def generate_file(freq, atom_num_in_box, direct_cell, positions_first_frame, pos
 
 if __name__ == "__main__":
 
-    num_basis = 42
+    num_basis = 155
     nu, eigenvector = get_frequency_eigen_info(num_basis)
     atom_num_in_box, direct_cell, positions_first_frame = read_from_lammps_structure_data()
 
