@@ -17,9 +17,9 @@ Example:
 
 
 
-###  References
+###  References (If one uses this code, cite our article is greatly appreciated.)
 
-* Liang T, Xu K, Han M, et al. [Abnormally High Thermal Conductivity in Fivefold Twinned Diamond Nanowires](https://arxiv.org/ftp/arxiv/papers/2112/2112.13757.pdf). arXiv preprint arXiv:2112.13757, 2021.
+* Liang T, Xu K, Han M, et al. Materials Today Physics, 2022, 25: 100705. [Abnormally High Thermal Conductivity in Fivefold Twinned Diamond Nanowires](https://www.sciencedirect.com/science/article/pii/S2542529322001031).
 
 
 
