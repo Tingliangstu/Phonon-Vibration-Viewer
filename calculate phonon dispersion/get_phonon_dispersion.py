@@ -31,9 +31,10 @@ def relax(structure, eps, steps=100000):
     print(f'pressure after relax: {pressure: 2f} GPa')
     
     # write('POSCAR', structure)       # If you want to output the optimized structure, please remove the comments.
+    
     return structure
 
-def get_band_path(band_path, band_label, structure, use_seek_path=True, band_resolution=101):
+def get_band_path(band_path, band_label, structure, use_seek_path=False, band_resolution=50):
 
     if use_seek_path:
         from seekpath import get_path
@@ -200,7 +201,7 @@ def plot_band_structure(band_structure, bands_and_labels,
     plt.suptitle('Phonon dispersion', fontsize='x-large')
 
     def replace_list(text_string):
-        substitutions = {'Gamma': u'$\Gamma$'}
+        substitutions = {'Gamma': r'$\Gamma$'}
 
         for item in substitutions.items():
             text_string = text_string.replace(item[0], item[1])
@@ -242,10 +243,10 @@ def get_calculator(structure_file, NEP_file, band_path, band_label, repeat_cell=
     # Get model from ACE
     structure = read(structure_file)
     
-    calculator_NEP = CPUNEP(NEP_file)
+    calculator = CPUNEP(NEP_file)
     print("\n********* Using NEP potential **********")
 
-    structure.set_calculator(calculator)   
+    structure.calc = calculator
  
     f_max = 0.00001
     
@@ -257,19 +258,20 @@ def get_calculator(structure_file, NEP_file, band_path, band_label, repeat_cell=
                                                          calculator, repeat_cell, band_path, band_label)
 
     plot_band_structure(band_structure, bands_and_labels)
+    
 
 if __name__ == "__main__":
 
     # Construct model
     
-    file = 'POSCAR_DNWs'
+    structure_file = 'POSCAR_DNWs'
     
-    repeat_supercell = [1, 1, 5]
+    repeat_supercell = [1, 4, 1]
 
     band_path = [[0.0, 0.0, 0.0],
-                 [0.0, 0.0, 0.5]]
+                 [0.0, 0.5, 0.0]]
                  
-    band_label = [('Gamma', 'A')]
+    band_label = [('Gamma', 'Y')]
 
     # Nep file
     nep_potential_file = 'C_2024_NEP4.txt'
